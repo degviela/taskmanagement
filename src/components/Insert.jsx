@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import '../Insert.css';
+import { Link } from 'react-router-dom';
 
 function Insert() {
 
@@ -14,7 +16,7 @@ function Insert() {
           date: dateInput,
         };
   
-        const response = await fetch('http://localhost/ralfsprogram/programmesanas-darbi/taskmanagement/TM/back-end/insertData.php', {
+        const response = await fetch('http://localhost/ralfsg/taskmanagement/back-end/insertData.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -43,14 +45,27 @@ function Insert() {
   
     return (
       <div className="main">
-        Task creation
+      <header>
+        {}
+      <button className = "home-button">
+      <Link to="/">
+      <label>◀ Back</label>
+      </Link>
+      </button>
+      </header>
+        <h1>Task creation</h1>
         <form className="box">
+            <label htmlFor="title">Title:</label>
             <input type="text" id = "title"/>
+            <label htmlFor="description">Description:</label>
             <input type="text" id = "description"/>
+            <label htmlFor="date">Date:</label>
             <input type="date" id = "date"/>
+            <div className="submitButton">
           <button type="button" className="submit" onClick={sendDataToPHP}>
             Submit Data
           </button>
+          </div>
         </form>
       </div>
     );
