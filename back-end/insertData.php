@@ -35,9 +35,7 @@ class DataHandler extends Database {
     }
 }
 
-// Create an instance of the DataHandler class
 $dataHandler = new DataHandler();
 
-// Process the raw POST data
 $dataHandler->processData();
 ?>
